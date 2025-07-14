@@ -44,3 +44,4 @@ compute_booleans as (
 )
 
 select * from compute_booleans
+
