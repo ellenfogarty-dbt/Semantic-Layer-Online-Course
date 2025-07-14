@@ -209,3 +209,20 @@ saved_queries:
         config:
           export_as: table
           schema: faith_tests_exports
+  - name: "order_count"
+    label: "order_count"
+    description: the number of orders placed
+    type: simple
+    type_params: 
+      measures: order_count 
+  - name: "order_gross_profit"
+    description: "Gross profit from each order."
+    type: derived
+    label: "order_gross_profit"
+    type_params:
+      expr: revenue - cost
+      metrics:
+      - name: order_total
+        alias: revenue
+      - name: order_amount
+        alias: cost
